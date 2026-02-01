@@ -1,591 +1,1076 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>赵明帆 - 个人简历</title>
+    <title>Zhao Mingfan - PhD Student in Electronic Science & Technology</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-color: #2563eb;
-            --secondary-color: #1e293b;
-            --accent-color: #3b82f6;
-            --light-color: #f8fafc;
-            --gray-color: #e2e8f0;
-            --dark-gray: #64748b;
-            --border-radius: 10px;
-            --box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-            --transition: all 0.3s ease;
-        }
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Poppins', 'Roboto', sans-serif;
+        }
+        
+        :root {
+            --primary-color: #0369a1;
+            --secondary-color: #0ea5e9;
+            --accent-color: #06b6d4;
+            --light-color: #e0f2fe;
+            --dark-color: #0c2d42;
+            --gray-color: #475569;
+            --card-shadow: 0 10px 25px rgba(3, 105, 161, 0.1);
+            --transition: all 0.3s ease;
         }
         
         body {
-            font-family: 'Noto Sans SC', 'Inter', sans-serif;
-            line-height: 1.7;
-            color: var(--secondary-color);
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
-            min-height: 100vh;
-            padding: 20px;
+            background: linear-gradient(135deg, #e0f2fe 0%, #cffafe 100%);
+            color: var(--dark-color);
+            line-height: 1.6;
         }
         
         .container {
-            max-width: 1000px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 15px;
+            padding: 20px 24px;
         }
         
-        /* 简历头部 */
-        .resume-header {
-            background: linear-gradient(135deg, var(--primary-color), #1e40af);
+        /* Header Styling */
+        header {
+            background: linear-gradient(135deg, rgba(3, 105, 161, 0.85) 0%, rgba(14, 165, 233, 0.85) 50%, rgba(6, 182, 212, 0.85) 100%), url('images/tech_background.png') center/cover;
+            opacity: 0.98;
             color: white;
-            border-radius: var(--border-radius);
-            padding: 40px;
+            padding: 50px 20px;
+            text-align: center;
+            border-radius: 16px;
             margin-bottom: 30px;
-            box-shadow: var(--box-shadow);
+            box-shadow: 0 8px 20px rgba(3, 105, 161, 0.2);
             position: relative;
             overflow: hidden;
         }
         
-        .resume-header::before {
+        header::before {
             content: '';
             position: absolute;
-            top: 0;
-            right: 0;
-            width: 300px;
-            height: 300px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            transform: translate(30%, -30%);
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.3;
+            z-index: 0;
         }
         
         .header-content {
             position: relative;
-            z-index: 2;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
         }
         
-        .name-title {
-            text-align: center;
-            margin-bottom: 20px;
+        .profile-section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
         }
         
-        .name {
+        .avatar-container {
+            flex-shrink: 0;
+        }
+        
+        .avatar {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            border: 6px solid rgba(255, 255, 255, 0.5);
+            background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 18px 40px rgba(3, 105, 161, 0.22);
+        }
+        
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .avatar-placeholder {
+            font-size: 80px;
+            color: var(--primary-color);
+        }
+        
+        .title-section {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        h1 {
             font-size: 2.8rem;
+            margin-bottom: 10px;
             font-weight: 700;
-            margin-bottom: 5px;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
         
-        .title {
-            font-size: 1.2rem;
+        .subtitle {
+            font-size: 1.5rem;
+            opacity: 0.95;
+            margin-bottom: 20px;
             font-weight: 400;
-            opacity: 0.9;
         }
         
         .contact-info {
             display: flex;
-            justify-content: center;
             flex-wrap: wrap;
+            justify-content: center;
             gap: 25px;
-            margin-top: 20px;
+            margin-top: 15px;
         }
         
         .contact-item {
             display: flex;
             align-items: center;
             gap: 10px;
+            font-size: 1.1rem;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 10px 20px;
+            border-radius: 30px;
+            backdrop-filter: blur(5px);
+            transition: var(--transition);
         }
         
-        /* 简历主体 */
-        .resume-body {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-bottom: 40px;
+        .contact-item:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.25);
         }
         
-        /* 卡片样式 */
+        .contact-item i {
+            color: #bfdbfe;
+        }
+        
+        /* Tabs Styling */
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            background: linear-gradient(135deg, #e0f2fe 0%, #cffafe 100%);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid #a5f3fc;
+        }
+        
+        .tab {
+            flex: 1;
+            min-width: 120px;
+            text-align: center;
+            padding: 18px 10px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--gray-color);
+            cursor: pointer;
+            transition: var(--transition);
+            border-bottom: 4px solid transparent;
+        }
+        
+        .tab:hover {
+            background-color: #f1f5f9;
+            color: var(--primary-color);
+        }
+        
+        .tab.active {
+            color: var(--primary-color);
+            border-bottom: 4px solid var(--secondary-color);
+            background-color: #f8fafc;
+        }
+        
+        .tab i {
+            margin-right: 8px;
+        }
+        
+        /* Tab Content Styling */
+        .tab-content {
+            display: none;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .tab-content h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        
+        .tab-content h3 {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            margin: 25px 0 15px;
+        }
+        
         .section-card {
-            background-color: white;
-            border-radius: var(--border-radius);
-            padding: 30px;
-            box-shadow: var(--box-shadow);
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            border-left: 4px solid var(--secondary-color);
+            box-shadow: 0 5px 15px rgba(3, 105, 161, 0.06);
             transition: var(--transition);
         }
         
         .section-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
         }
         
         .section-title {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            margin-bottom: 25px;
-            padding-bottom: 12px;
-            border-bottom: 2px solid var(--gray-color);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        
-        .section-title i {
-            color: var(--accent-color);
-            font-size: 1.3rem;
-        }
-        
-        /* 教育经历 */
-        .education-item, .work-item, .research-item {
-            margin-bottom: 25px;
-        }
-        
-        .education-item:last-child, .work-item:last-child, .research-item:last-child {
-            margin-bottom: 0;
-        }
-        
-        .institution {
             font-weight: 600;
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-            color: var(--secondary-color);
+            font-size: 1.3rem;
+            color: var(--primary-color);
         }
         
-        .degree {
+        .section-date {
+            color: var(--gray-color);
             font-weight: 500;
-            color: var(--dark-gray);
-            margin-bottom: 5px;
         }
         
-        .date-location {
-            display: flex;
-            justify-content: space-between;
-            color: var(--dark-gray);
-            font-size: 0.9rem;
-            margin-bottom: 10px;
-            flex-wrap: wrap;
+        .section-details {
+            color: var(--dark-color);
         }
         
-        .details {
+        .section-details ul {
+            padding-left: 20px;
             margin-top: 10px;
         }
         
-        /* 技能部分 */
-        .skills-container {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
+        .section-details li {
+            margin-bottom: 8px;
         }
         
-        .skill-category {
-            margin-bottom: 5px;
-        }
-        
-        .skill-items {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        
-        .skill-tag {
-            background-color: var(--light-color);
-            color: var(--primary-color);
-            padding: 6px 15px;
-            border-radius: 50px;
-            font-size: 0.9rem;
+        .highlight {
+            background-color: #cffafe;
+            padding: 3px 8px;
+            border-radius: 4px;
             font-weight: 500;
-            border: 1px solid var(--gray-color);
-            transition: var(--transition);
+            color: #0369a1;
         }
         
-        .skill-tag:hover {
-            background-color: var(--primary-color);
-            color: white;
-            transform: translateY(-2px);
-        }
-        
-        /* 研究项目 */
-        .project-title {
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-            color: var(--secondary-color);
-        }
-        
-        .project-role {
-            font-style: italic;
-            color: var(--dark-gray);
-            margin-bottom: 8px;
-        }
-        
-        /* 列表样式 */
-        ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-        
-        li {
-            margin-bottom: 8px;
-            padding-left: 22px;
-            position: relative;
-        }
-        
-        li:before {
-            content: "›";
-            color: var(--primary-color);
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-            font-size: 1.2rem;
-        }
-        
-        /* 出版物 */
+        /* Publications Styling */
         .publication-item {
-            margin-bottom: 20px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid var(--gray-color);
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #e2e8f0;
         }
         
         .publication-item:last-child {
             border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
         }
         
-        .publication-authors {
-            color: var(--dark-gray);
-            font-size: 0.95rem;
-            margin-bottom: 5px;
-        }
-        
-        .publication-title {
+        .pub-title {
             font-weight: 600;
+            font-size: 1.2rem;
             margin-bottom: 8px;
-            color: var(--secondary-color);
+            color: var(--dark-color);
         }
         
-        .publication-venue {
-            color: var(--dark-gray);
-            font-size: 0.9rem;
-            margin-bottom: 5px;
+        .pub-authors {
+            color: var(--gray-color);
+            margin-bottom: 8px;
         }
         
-        .publication-link {
-            color: var(--primary-color);
+        .pub-venue {
+            font-style: italic;
+            color: var(--gray-color);
+            margin-bottom: 8px;
+        }
+        
+        .pub-badge {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-right: 10px;
+            margin-top: 5px;
+        }
+
+        .pub-link {
+            display: inline-block;
+            margin-top: 10px;
+            margin-right: 10px;
+            padding: 8px 14px;
+            background-color: var(--primary-color);
+            color: white;
             text-decoration: none;
-            font-size: 0.9rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .pub-link:hover {
+            transform: translateY(-3px);
+            background-color: var(--secondary-color);
+            color: #03334a;
+        }
+        
+        /* Education Timeline */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: var(--secondary-color);
+            border-radius: 2px;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 70px;
+            margin-bottom: 40px;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: 22px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: var(--secondary-color);
+            border: 4px solid white;
+            box-shadow: 0 0 0 3px var(--secondary-color);
+            z-index: 1;
+        }
+        
+        /* Hobbies Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            height: 250px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: var(--transition);
         }
         
-        .publication-link:hover {
-            color: #1e40af;
-            text-decoration: underline;
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
         }
         
-        /* 奖项 */
-        .award-item {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 15px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid var(--gray-color);
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
         }
         
-        .award-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
+        .gallery-item:hover img {
+            transform: scale(1.05);
         }
         
-        /* 响应式设计 */
-        @media (max-width: 900px) {
-            .resume-body {
-                grid-template-columns: 1fr;
-            }
-            
-            .name {
-                font-size: 2.2rem;
-            }
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 15px;
+            transform: translateY(100%);
+            transition: var(--transition);
         }
         
-        @media (max-width: 576px) {
-            .resume-header {
-                padding: 30px 20px;
-            }
-            
-            .name {
-                font-size: 1.9rem;
-            }
-            
-            .contact-info {
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
-            }
-            
-            .section-card {
-                padding: 25px 20px;
-            }
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
         }
         
-        /* 页脚 */
-        .resume-footer {
+        .hobbies-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .hobby-card {
+            background: linear-gradient(135deg, #e0f2fe 0%, #cffafe 100%);
+            padding: 25px;
+            border-radius: 10px;
             text-align: center;
-            padding: 20px;
-            color: var(--dark-gray);
-            font-size: 0.9rem;
+            transition: var(--transition);
+            border-top: 4px solid var(--accent-color);
+        }
+        
+        .hobby-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .hobby-icon {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+        
+        /* Skills Styling */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .skill-category {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            padding: 25px;
+            border-radius: 10px;
+        }
+        
+        .skill-item {
+            margin-bottom: 15px;
+        }
+        
+        .skill-name {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+        
+        .skill-bar {
+            height: 10px;
+            background-color: #e2e8f0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .skill-level {
+            height: 100%;
+            background-color: var(--secondary-color);
+            border-radius: 5px;
+        }
+        
+        /* Notes Styling */
+        .notes-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .note-item {
+            background: linear-gradient(135deg, #cffafe 0%, #a5f3fc 100%);
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            border-left: 4px solid var(--secondary-color);
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 30px;
+            color: var(--gray-color);
+            border-top: 1px solid #e2e8f0;
         }
         
         .github-link {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            background-color: var(--secondary-color);
+            gap: 10px;
+            background-color: var(--dark-color);
             color: white;
-            padding: 10px 20px;
-            border-radius: 50px;
+            padding: 12px 25px;
+            border-radius: 30px;
             text-decoration: none;
             font-weight: 500;
-            margin-top: 10px;
+            margin-top: 20px;
             transition: var(--transition);
         }
         
         .github-link:hover {
-            background-color: #0f172a;
+            background-color: #333;
             transform: translateY(-3px);
         }
         
-        /* 打印样式 */
-        @media print {
-            body {
-                background: white;
-                padding: 0;
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .profile-section {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
             }
             
-            .resume-header {
-                box-shadow: none;
+            .avatar {
+                width: 180px;
+                height: 180px;
             }
             
-            .section-card {
-                box-shadow: none;
-                border: 1px solid #ddd;
+            h1 {
+                font-size: 2.2rem;
             }
             
-            .github-link {
-                display: none;
+            .subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .tab {
+                min-width: 100px;
+                font-size: 1rem;
+                padding: 15px 5px;
+            }
+            
+            .tab-content {
+                padding: 25px;
+            }
+            
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-item {
+                padding-left: 50px;
+            }
+            
+            .timeline-dot {
+                left: 12px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 15px;
+            }
+            
+            header {
+                padding: 30px 15px;
+            }
+            
+            .contact-item {
+                font-size: 0.95rem;
+                padding: 8px 15px;
+            }
+            
+            .gallery {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- 简历头部 -->
-        <header class="resume-header">
+        <header>
             <div class="header-content">
-                <div class="name-title">
-                    <h1 class="name">赵明帆</h1>
-                    <p class="title">电子与信息工程硕士 | 计算机视觉研究员 | 软件工程师</p>
-                </div>
-                
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-graduation-cap"></i>
-                        <span>中国科学院大学</span>
+                <div class="profile-section">
+                    <div class="avatar-container">
+                        <div class="avatar">
+                            <img src="images/zmfzjz_2026_good.jpg?v=2026" alt="Zhao Mingfan">
+                        </div>
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>中国 · 西安</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>zhaomingfan@example.com</span>
+                    <div class="title-section">
+                        <h1>Mingfan Zhao</h1>
+                        <div class="subtitle">PhD Candidate in Electronic Science & Technology</div>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>zhaomf7@mail2.sysu.edu.cn</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fab fa-qq"></i>
+                                <span>1594313483</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-university"></i>
+                                <span>Sun Yat-sen University</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Guangzhou, China</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </header>
         
-        <!-- 简历主体 -->
-        <div class="resume-body">
-            <!-- 左列 -->
-            <div class="left-column">
-                <!-- 教育背景 -->
-                <section class="section-card">
-                    <h2 class="section-title"><i class="fas fa-university"></i> 教育背景</h2>
-                    
-                    <div class="education-item">
-                        <h3 class="institution">中国科学院大学</h3>
-                        <p class="degree">电子与信息工程硕士 | GPA: 3.56/4.00</p>
-                        <div class="date-location">
-                            <span><i class="far fa-calendar"></i> 2020 - 2023</span>
-                            <span><i class="fas fa-map-marker-alt"></i> 西安光学精密机械研究所</span>
-                        </div>
-                        <div class="details">
-                            <p>相关课程：遥感图像处理与分析、模式识别与机器学习、计算机视觉、深度学习、图像分析及其应用研讨会等</p>
-                        </div>
-                    </div>
-                    
-                    <div class="education-item">
-                        <h3 class="institution">西北大学</h3>
-                        <p class="degree">光电信息科学与工程学士 | GPA: 2.68/4.00</p>
-                        <div class="date-location">
-                            <span><i class="far fa-calendar"></i> 2014年8月 - 2018年6月</span>
-                            <span><i class="fas fa-map-marker-alt"></i> 中国西安</span>
-                        </div>
-                        <div class="details">
-                            <p>相关课程：计算机语言与编程(C++)、微积分、线性代数、数学物理方法、计算机网络原理、量子力学、计算物理等</p>
-                        </div>
-                    </div>
-                </section>
-                
-                <!-- 编程技能 -->
-                <section class="section-card">
-                    <h2 class="section-title"><i class="fas fa-code"></i> 编程技能</h2>
-                    
-                    <div class="skills-container">
-                        <div class="skill-category">
-                            <h3>编程语言</h3>
-                            <div class="skill-items">
-                                <span class="skill-tag">Python</span>
-                                <span class="skill-tag">C++</span>
-                                <span class="skill-tag">Matlab</span>
-                                <span class="skill-tag">SQL</span>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-category">
-                            <h3>开发工具</h3>
-                            <div class="skill-items">
-                                <span class="skill-tag">Visual Studio</span>
-                                <span class="skill-tag">QT</span>
-                                <span class="skill-tag">PyCharm</span>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                
-                <!-- 奖项 -->
-                <section class="section-card">
-                    <h2 class="section-title"><i class="fas fa-award"></i> 获奖情况</h2>
-                    
-                    <div class="award-item">
-                        <span>中国科学院大学优秀学生</span>
-                        <span class="date">2020-2021</span>
-                    </div>
-                    
-                    <div class="award-item">
-                        <span>中国科学院大学优秀学生</span>
-                        <span class="date">2021-2022</span>
-                    </div>
-                </section>
+        <nav class="tabs">
+            <div class="tab active" data-tab="home">
+                <i class="fas fa-home"></i> Home
+            </div>
+            <div class="tab" data-tab="publications">
+                <i class="fas fa-file-alt"></i> Publications
+            </div>
+            <div class="tab" data-tab="education">
+                <i class="fas fa-graduation-cap"></i> Education
+            </div>
+            <div class="tab" data-tab="hobbies">
+                <i class="fas fa-heart"></i> Hobbies
+            </div>
+            <div class="tab" data-tab="notes">
+                <i class="fas fa-sticky-note"></i> Notes
+            </div>
+        </nav>
+        
+        <!-- Home Tab -->
+        <section id="home" class="tab-content active">
+            <h2>Professional Profile</h2>
+            
+            <div class="section-card">
+                <div class="section-header">
+                    <div class="section-title">Research Focus</div>
+                </div>
+                <div class="section-details">
+                    <p>I began my PhD at Sun Yat-sen University in 2023. My research interests are deep learning, AI hardware acceleration, and robotics.</p>
+                </div>
             </div>
             
-            <!-- 右列 -->
-            <div class="right-column">
-                <!-- 研究经历 -->
-                <section class="section-card">
-                    <h2 class="section-title"><i class="fas fa-flask"></i> 研究经历</h2>
-                    
-                    <div class="research-item">
-                        <h3 class="project-title">CSTGAN: 基于循环Swin Transformer GAN的非配对红外图像着色</h3>
-                        <p class="project-role">作者 | 2021年9月 - 至今</p>
-                        <div class="details">
-                            <p>热红外图像着色是促进热红外图像理解的重要且有效的方法。实现这一目标的主要方法是基于生成对抗网络将热红外图像转换为可见光图像。基于循环一致生成对抗网络，该方法使用Transformer和卷积层重新设计生成器，并修改判别器和损失函数。该方法结合了卷积和Transformer的优点，以获得红外图像域和可见光图像域之间的准确映射。结果表明，该方法在公共数据集上得到验证，在FID和KID指标上优于先前的方法。</p>
-                        </div>
-                    </div>
-                    
-                    <div class="research-item">
-                        <h3 class="project-title">HFGAN: 基于分层特征的偏振图像条纹去除GAN</h3>
-                        <p class="project-role">作者 | 2021年10月 - 至今</p>
-                        <div class="details">
-                            <p>偏振相机拍摄的偏振图像具有条纹，这阻碍了偏振图像在目标检测和图像分类等高级算法中的有效应用。去除偏振图像的条纹以获得清晰图像一直是一个未解决的问题。基于生成对抗网络，该方法使用不同层次的特征重新设计生成器和损失函数。该方法在数据集上训练，然后在真实拍摄的偏振图像上进行测试，在视觉上以及SSIM和PSNR指标上均优于现有方法。</p>
-                        </div>
-                    </div>
-                </section>
-                
-                <!-- 工作经历 -->
-                <section class="section-card">
-                    <h2 class="section-title"><i class="fas fa-briefcase"></i> 工作经历</h2>
-                    
-                    <div class="work-item">
-                        <h3 class="institution">西南计算机有限公司</h3>
-                        <p class="degree">软件助理工程师</p>
-                        <div class="date-location">
-                            <span><i class="far fa-calendar"></i> 2018年7月 - 2020年3月</span>
-                            <span><i class="fas fa-map-marker-alt"></i> 中国重庆</span>
-                        </div>
-                        <div class="details">
-                            <p>C++软件开发：在工作中，我从事Windows环境和Linux环境下的大型应用软件开发。熟练掌握C++和SQL语言。</p>
-                            <p>成果：作为开发项目的核心人员，我设计并构建了软件架构，并在离职前成功完成了项目的初步交付。</p>
-                        </div>
-                    </div>
-                </section>
-                
-                <!-- 出版物 -->
-                <section class="section-card">
-                    <h2 class="section-title"><i class="fas fa-file-alt"></i> 出版物</h2>
-                    
-                    <div class="publication-item">
-                        <div class="publication-authors">Z. Mingfan, F. Guirong, T. Jiahai, Z. Ning, and L. Xiaoqiang</div>
-                        <div class="publication-title">"CSTGAN: Cycle Swin Transformer GAN for Unpaired Infrared Image Colorization"</div>
-                        <div class="publication-venue">Proceedings of the 2022 3rd International Conference on Control, Robotics and Intelligent System (CCRIS), 2022, pp. 241-247.</div>
-                        <a href="https://doi.org/10.1145/3562007.3562053" target="_blank" class="publication-link">
-                            <i class="fas fa-external-link-alt"></i> 查看出版物
-                        </a>
-                    </div>
-                </section>
+            <h3>Research Experience</h3>
+            
+            <div class="section-card">
+                <div class="section-header">
+                    <div class="section-title">Transformer Hardware Acceleration for AI</div>
+                    <div class="section-date">Ongoing</div>
+                </div>
+                <div class="section-details">
+                    <p>Hardware acceleration for neural network models with focus on optimizing power efficiency.</p>
+                    <ul>
+                        <li><span class="highlight">My Role:</span> Algorithm optimization and hardware design</li>
+                        <li><span class="highlight">Expected Outcome:</span> Superior power-performance ratio</li>
+                    </ul>
+                </div>
             </div>
-        </div>
+            
+            <div class="section-card">
+                <div class="section-header">
+                    <div class="section-title">Saliency Map-Guided DenseUnetGAN for Paired Infrared Image Colorization</div>
+                    <div class="section-date">Completed</div>
+                </div>
+                <div class="section-details">
+                    <p>Proposed a novel method for paired infrared image colorization using saliency map guidance to improve performance.</p>
+                    <ul>
+                        <li><span class="highlight">My Role:</span> Redesigned network architecture based on SCGAN</li>
+                        <li><span class="highlight">Results:</span> State-of-the-art performance on KAIST dataset</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section-card">
+                <div class="section-header">
+                    <div class="section-title">Cycle SwinTransformer GAN for Unpaired Infrared Image Colorization</div>
+                    <div class="section-date">Completed</div>
+                </div>
+                <div class="section-details">
+                    <p>Addressed artifacts and distortion issues in unpaired infrared image colorization using a novel GAN-based approach.</p>
+                    <ul>
+                        <li><span class="highlight">My Role:</span> Redesigned network architecture based on unsupervised GAN</li>
+                        <li><span class="highlight">Results:</span> Outperformed existing methods on multiple datasets</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section-card">
+                <div class="section-header">
+                    <div class="section-title">Hierarchical Feature-based Conditional GAN for Stripe Noise Removal in Polarization Images</div>
+                    <div class="section-date">Completed</div>
+                </div>
+                <div class="section-details">
+                    <p>Developed a method to remove stripe noise from polarization images while minimizing information loss.</p>
+                    <ul>
+                        <li><span class="highlight">My Role:</span> Redesigned generator and loss functions to utilize hierarchical features</li>
+                        <li><span class="highlight">Results:</span> Superior visual quality and higher SSIM/PSNR metrics</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Technical Skills</h3>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h4>Programming</h4>
+                    <div class="skill-item">
+                        <span class="skill-name">C++</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Python</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">MATLAB</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Databases</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 75%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>AI & Hardware</h4>
+                    <div class="skill-item">
+                        <span class="skill-name">PyTorch Framework</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Deep Learning Models</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 88%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Verilog</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Hardware Design</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>Robotics</h4>
+                    <div class="skill-item">
+                        <span class="skill-name">ROS (Robot Operating System)</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Computer Vision</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Motion Planning</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 75%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         
-        <!-- 页脚 -->
-        <footer class="resume-footer">
-            <p>© 2023 赵明帆 - 个人简历</p>
-            <p>最后更新: 2023年10月</p>
-            <a href="https://github.com/yourusername" target="_blank" class="github-link">
-                <i class="fab fa-github"></i> GitHub 仓库
+        <!-- Publications Tab -->
+        <section id="publications" class="tab-content">
+            <h2>Publications</h2>
+            
+            <div class="publication-item">
+                <div class="pub-title">DATA: A Memory-Efficient Deformable Transformer Accelerator via Neural Architecture Search</div>
+                <div class="pub-authors">M. Zhao, W. Mao, Z. Wang</div>
+                <div class="pub-venue">IEEE Transactions on Very Large Scale Integration (VLSI) Systems, vol. 33, no. 11, pp. 3097-3108, Nov. 2025</div>
+                <div class="pub-badge">First Author</div>
+                <div class="pub-badge">SCI Journal Paper</div>
+                <p class="section-details">This paper presents DATA, a memory-efficient deformable transformer accelerator designed through neural architecture search. The work focuses on optimizing hardware implementation of transformer models with deformable attention mechanisms, addressing key challenges in memory management and computational efficiency.</p>
+                <p style="margin-top: 10px; font-size: 0.9rem; color: var(--gray-color);"><strong>DOI:</strong> 10.1109/TVLSI.2025.3589359</p>
+                <a class="pub-link" href="https://doi.org/10.1109/TVLSI.2025.3589359" target="_blank" rel="noopener">View Paper</a>
+            </div>
+            
+            <div class="publication-item">
+                <div class="pub-title">A novel demodulation method of the channeled modulated polarization imaging pictures by hybrid feature modulated autoencoders</div>
+                <div class="pub-authors">Ning Zhang, Mingfan Zhao, Zhinan Zhang, Jie Liu, Yunyao Zhang, and Siyuan Li</div>
+                <div class="pub-venue">Optics Express, vol. 32, no. 18, pp. 31473-31485, Aug. 2024</div>
+                <div class="pub-badge">Co-First Author</div>
+                <div class="pub-badge">SCI Journal Paper</div>
+                <p class="section-details">This paper presents a novel demodulation method for channeled modulated polarization imaging using hybrid feature modulated autoencoders. The approach addresses key challenges in polarization image processing and demonstrates improved performance in automated image analysis.</p>
+                <a class="pub-link" href="https://doi.org/10.1364/oe.530310" target="_blank" rel="noopener">View Paper</a>
+            </div>
+            
+            <div class="publication-item">
+                <div class="pub-title">Guide to the design of broadband full polarization imager based on dispersion-compensation Savart plates</div>
+                <div class="pub-authors">Zhang N, Zhao M, Zhang Y, et al.</div>
+                <div class="pub-venue">Applied optics, 2023(19):62</div>
+                <div class="pub-badge">Second Author</div>
+                <div class="pub-badge">SCI Journal Paper</div>
+                <p class="section-details">This paper provides a comprehensive guide for designing broadband full polarization imagers using dispersion-compensation Savart plates, with focus on optical system optimization and performance enhancement.</p>
+                <a class="pub-link" href="https://doi.org/10.1364/ao.488427" target="_blank" rel="noopener">View Paper</a>
+            </div>
+            
+            <div class="publication-item">
+                <div class="pub-title">CSTGAN: Cycle Swin Transformer GAN for Unpaired Infrared Image Colorization</div>
+                <div class="pub-authors">Zhao M, Feng G, Tan J, et al.</div>
+                <div class="pub-venue">2022 3rd International Conference on Control, Robotics and Intelligent System (CCRIS), 2022</div>
+                <div class="pub-badge">First Author</div>
+                <div class="pub-badge">EI Conference Paper</div>
+                <p class="section-details">This paper presents a novel GAN-based approach for colorizing unpaired infrared images, addressing common artifacts and distortion issues through a cycle-consistent Swin Transformer architecture.</p>
+                <a class="pub-link" href="https://doi.org/10.1145/3562007.3562053" target="_blank" rel="noopener">View Paper</a>
+            </div>
+            
+            <div class="section-card">
+                <h3>Research in Progress</h3>
+                <p>Currently working on additional papers in the areas of transformer hardware acceleration and computer vision applications.</p>
+            </div>
+        </section>
+        
+        <!-- Education Tab -->
+        <section id="education" class="tab-content">
+            <h2>Education Background</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="section-card">
+                        <div class="section-header" style="display: flex; align-items: center; justify-content: space-between;">
+                            <div>
+                                <div class="section-title">Sun Yat-sen University</div>
+                                <div class="section-date">2023.9 - Present</div>
+                            </div>
+                            <img src="logo/sysu_logo.png" alt="Sun Yat-sen University" style="width: 50px; height: 50px; border-radius: 4px; object-fit: contain;">
+                        </div>
+                        <div class="section-details">
+                            <p><strong>PhD Candidate in Electronic Science & Technology</strong></p>
+                            <ul>
+                                <li>Doctoral First-Class Scholarship (2023-2024)</li>
+                                <li>Research focus: Hardware acceleration for neural networks, computer vision algorithms</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="section-card">
+                        <div class="section-header" style="display: flex; align-items: center; justify-content: space-between;">
+                            <div>
+                                <div class="section-title">University of Chinese Academy of Sciences</div>
+                                <div class="section-date">2020.9 - 2023.6</div>
+                            </div>
+                            <img src="logo/ucas_logo.png" alt="University of Chinese Academy of Sciences" style="width: 70px; height: 27px; border-radius: 4px; object-fit: contain;">
+                        </div>
+                        <div class="section-details">
+                            <p><strong>Master of Engineering in Electronic Information</strong></p>
+                            <p><em>Cultivation Unit: Xi'an Institute of Optics and Precision Mechanics, CAS</em></p>
+                            <ul>
+                                <li>Outstanding Student Award (2020-2021)</li>
+                                <li>Outstanding Student Award (2021-2022)</li>
+                                <li>Master's thesis focused on infrared image colorization using GANs</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="section-card">
+                        <div class="section-header" style="display: flex; align-items: center; justify-content: space-between;">
+                            <div>
+                                <div class="section-title">Northwest University</div>
+                                <div class="section-date">2014.9 - 2018.6</div>
+                            </div>
+                            <img src="logo/nwu_logo.png" alt="Northwest University" style="width: 50px; height: 50px; border-radius: 4px; object-fit: contain;">
+                        </div>
+                        <div class="section-details">
+                            <p><strong>Bachelor of Engineering in Optoelectronic Information Science & Engineering</strong></p>
+                            <ul>
+                                <li>University Scholarship (2014-2015)</li>
+                                <li>University Scholarship (2015-2016)</li>
+                                <li>University Scholarship (2016-2017)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <h3>Work Experience</h3>
+            <div class="section-card">
+                <div class="section-header">
+                    <div class="section-title">Southwest Computer Co., Ltd. (Chongqing)</div>
+                    <div class="section-date">2018.7 - 2020.3</div>
+                </div>
+                <div class="section-details">
+                    <p><strong>C++ Software Developer</strong></p>
+                    <ul>
+                        <li>One of the main developers for C++ application software</li>
+                        <li>Responsibilities: Software framework design and sub-module development</li>
+                        <li>Achievements: Completed framework construction and module interaction; delivered initial version before departure</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Hobbies Tab -->
+        <section id="hobbies" class="tab-content">
+            <h2>Hobbies & Interests</h2>
+            
+            <div class="section-card">
+                <p>Outside of my academic and research work, I enjoy various activities that help me maintain a balanced lifestyle and foster creativity. Here are some of my interests:</p>
+            </div>
+            
+            <div class="hobbies-list">
+                <div class="hobby-card">
+                    <div class="hobby-icon">
+                        <i class="fas fa-volleyball-ball"></i>
+                    </div>
+                    <h3>Volleyball</h3>
+                    <p>Passionate about playing volleyball, enjoying the teamwork and physical engagement that the sport provides.</p>
+                </div>
+                
+                <div class="hobby-card">
+                    <div class="hobby-icon">
+                        <i class="fas fa-disc"></i>
+                    </div>
+                    <h3>Frisbee</h3>
+                    <p>Enjoying frisbee as a recreational sport that combines skill, strategy, and outdoor fun with friends.</p>
+                </div>
+                
+                <div class="hobby-card">
+                    <div class="hobby-icon">
+                        <i class="fas fa-tennis-ball"></i>
+                    </div>
+                    <h3>Tennis</h3>
+                    <p>Dedicated to tennis as a sport that challenges both mind and body, providing excellent cardiovascular exercise.</p>
+                </div>
+            </div>
+            
+            <h3>Life Photos</h3>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="images/1.jpg?v=2026" alt="Life photo 1">
+                    <div class="gallery-caption">Life Moment 1</div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="images/2.jpg?v=2026" alt="Life photo 2">
+                    <div class="gallery-caption">Life Moment 2</div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="images/3.jpg?v=2026" alt="Life photo 3">
+                    <div class="gallery-caption">Life Moment 3</div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="images/4.jpg?v=2026" alt="Life photo 4">
+                    <div class="gallery-caption">Life Moment 4</div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="images/5.jpg?v=2026" alt="Life photo 5">
+                    <div class="gallery-caption">Life Moment 5</div>
+                </div>
+            </div>
+            
+            <div class="section-card">
+                <h3>Extracurricular Activities</h3>
+                <ul>
+                    <li><strong>Northwest University Science & Entrepreneurship Association</strong> - Vice Minister of Science Popularization Department (2015.6 - 2016.6)</li>
+                    <li><strong>UCAS School of Optoelectronics Student Union</strong> - Minister of Arts Department (2020.9 - 2021.6)</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Notes Tab -->
+        <section id="notes" class="tab-content">
+            <h2>Additional Notes</h2>
+            
+            <div class="notes-content">
+                <div class="note-item">
+                    <h3>Self-Evaluation</h3>
+                    <p>Proficient in Python, C++, Verilog, MATLAB, and development tools like Qt and VS. Capable of reproducing computer vision paper codes using PyTorch framework and designing hardware accelerators.</p>
+                    <p>Diligent in academic pursuits with consistent scholarship awards. Maintain a positive attitude towards life and work, with passion for coding and research.</p>
+                </div>
+                
+                <div class="note-item">
+                    <h3>Future Goals</h3>
+                    <p>Complete PhD dissertation on efficient hardware acceleration for vision transformers. Pursue postdoctoral research or industry R&D position focusing on AI hardware co-design. Contribute to open-source projects in computer vision and hardware acceleration.</p>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <p>© 2023 Zhao Mingfan | PhD Candidate in Electronic Science & Technology</p>
+            <p>This resume website is built with HTML, CSS, and JavaScript. All information is current as of October 2023.</p>
+            <a href="https://github.com" class="github-link" target="_blank">
+                <i class="fab fa-github"></i> View on GitHub
             </a>
+            <p style="margin-top: 20px; font-size: 0.9rem;">Last updated: 2026</p>
         </footer>
     </div>
 
     <script>
-        // 添加简单的交互效果
+        // Tab switching functionality
         document.addEventListener('DOMContentLoaded', function() {
-            // 为技能标签添加点击效果
-            const skillTags = document.querySelectorAll('.skill-tag');
-            skillTags.forEach(tag => {
-                tag.addEventListener('click', function() {
-                    this.style.transform = 'translateY(-2px)';
-                    setTimeout(() => {
-                        this.style.transform = '';
-                    }, 200);
+            const tabs = document.querySelectorAll('.tab');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const tabName = this.getAttribute('data-tab');
+
+                    // Remove active class from all tabs and contents
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+
+                    // Add active class to clicked tab and corresponding content
+                    this.classList.add('active');
+                    const activeContent = document.getElementById(tabName);
+                    if (activeContent) {
+                        activeContent.classList.add('active');
+                    }
                 });
-            });
-            
-            // 更新年份
-            const yearSpan = document.querySelector('.resume-footer p:first-child');
-            const currentYear = new Date().getFullYear();
-            yearSpan.textContent = `© ${currentYear} 赵明帆 - 个人简历`;
-            
-            // 添加打印功能提示
-            console.log('提示：按 Ctrl+P 可以打印此简历');
-            
-            // 添加加载动画
-            const cards = document.querySelectorAll('.section-card');
-            cards.forEach((card, index) => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
-                
-                setTimeout(() => {
-                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }, 100 + index * 100);
             });
         });
     </script>
