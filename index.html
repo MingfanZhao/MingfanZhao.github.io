@@ -350,6 +350,22 @@
             color: #03334a;
         }
         
+        /* Publication thumbnails */
+        .pub-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .pub-thumb {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(3,105,161,0.12);
+            flex-shrink: 0;
+        }
+        
         /* Education Timeline */
         .timeline {
             position: relative;
@@ -819,44 +835,64 @@
             <h2>Publications</h2>
             
             <div class="publication-item">
-                <div class="pub-title">DATA: A Memory-Efficient Deformable Transformer Accelerator via Neural Architecture Search</div>
-                <div class="pub-authors">M. Zhao, W. Mao, Z. Wang</div>
-                <div class="pub-venue">IEEE Transactions on Very Large Scale Integration (VLSI) Systems, vol. 33, no. 11, pp. 3097-3108, Nov. 2025</div>
-                <div class="pub-badge">First Author</div>
-                <div class="pub-badge">SCI Journal Paper</div>
-                <p class="section-details">This paper presents DATA, a memory-efficient deformable transformer accelerator designed through neural architecture search. The work focuses on optimizing hardware implementation of transformer models with deformable attention mechanisms, addressing key challenges in memory management and computational efficiency.</p>
-                <p style="margin-top: 10px; font-size: 0.9rem; color: var(--gray-color);"><strong>DOI:</strong> 10.1109/TVLSI.2025.3589359</p>
-                <a class="pub-link" href="https://doi.org/10.1109/TVLSI.2025.3589359" target="_blank" rel="noopener">View Paper</a>
+                <div class="pub-row">
+                    <img class="pub-thumb" src="paper picture/pub_data.png" alt="DATA figure">
+                    <div class="pub-body">
+                        <div class="pub-title">DATA: A Memory-Efficient Deformable Transformer Accelerator via Neural Architecture Search</div>
+                        <div class="pub-authors">M. Zhao, W. Mao, Z. Wang</div>
+                        <div class="pub-venue">IEEE Transactions on Very Large Scale Integration (VLSI) Systems, vol. 33, no. 11, pp. 3097-3108, Nov. 2025</div>
+                        <div class="pub-badge">First Author</div>
+                        <div class="pub-badge">SCI Journal Paper</div>
+                        <p class="section-details">This paper presents DATA, a memory-efficient deformable transformer accelerator designed through neural architecture search. The work focuses on optimizing hardware implementation of transformer models with deformable attention mechanisms, addressing key challenges in memory management and computational efficiency.</p>
+                        <p style="margin-top: 10px; font-size: 0.9rem; color: var(--gray-color);"><strong>DOI:</strong> 10.1109/TVLSI.2025.3589359</p>
+                        <a class="pub-link" href="https://doi.org/10.1109/TVLSI.2025.3589359" target="_blank" rel="noopener">View Paper</a>
+                    </div>
+                </div>
             </div>
             
             <div class="publication-item">
-                <div class="pub-title">A novel demodulation method of the channeled modulated polarization imaging pictures by hybrid feature modulated autoencoders</div>
-                <div class="pub-authors">Ning Zhang, Mingfan Zhao, Zhinan Zhang, Jie Liu, Yunyao Zhang, and Siyuan Li</div>
-                <div class="pub-venue">Optics Express, vol. 32, no. 18, pp. 31473-31485, Aug. 2024</div>
-                <div class="pub-badge">Co-First Author</div>
-                <div class="pub-badge">SCI Journal Paper</div>
-                <p class="section-details">This paper presents a novel demodulation method for channeled modulated polarization imaging using hybrid feature modulated autoencoders. The approach addresses key challenges in polarization image processing and demonstrates improved performance in automated image analysis.</p>
-                <a class="pub-link" href="https://doi.org/10.1364/oe.530310" target="_blank" rel="noopener">View Paper</a>
+                <div class="pub-row">
+                    <img class="pub-thumb" src="paper picture/pub_oe.png" alt="Optics Express figure">
+                    <div class="pub-body">
+                        <div class="pub-title">A novel demodulation method of the channeled modulated polarization imaging pictures by hybrid feature modulated autoencoders</div>
+                        <div class="pub-authors">Ning Zhang, Mingfan Zhao, Zhinan Zhang, Jie Liu, Yunyao Zhang, and Siyuan Li</div>
+                        <div class="pub-venue">Optics Express, vol. 32, no. 18, pp. 31473-31485, Aug. 2024</div>
+                        <div class="pub-badge">Co-First Author</div>
+                        <div class="pub-badge">SCI Journal Paper</div>
+                        <p class="section-details">This paper presents a novel demodulation method for channeled modulated polarization imaging using hybrid feature modulated autoencoders. The approach addresses key challenges in polarization image processing and demonstrates improved performance in automated image analysis.</p>
+                        <a class="pub-link" href="https://doi.org/10.1364/oe.530310" target="_blank" rel="noopener">View Paper</a>
+                    </div>
+                </div>
             </div>
             
             <div class="publication-item">
-                <div class="pub-title">Guide to the design of broadband full polarization imager based on dispersion-compensation Savart plates</div>
-                <div class="pub-authors">Zhang N, Zhao M, Zhang Y, et al.</div>
-                <div class="pub-venue">Applied optics, 2023(19):62</div>
-                <div class="pub-badge">Second Author</div>
-                <div class="pub-badge">SCI Journal Paper</div>
-                <p class="section-details">This paper provides a comprehensive guide for designing broadband full polarization imagers using dispersion-compensation Savart plates, with focus on optical system optimization and performance enhancement.</p>
-                <a class="pub-link" href="https://doi.org/10.1364/ao.488427" target="_blank" rel="noopener">View Paper</a>
+                <div class="pub-row">
+                    <img class="pub-thumb" src="paper picture/pub_ao.png" alt="Applied Optics figure">
+                    <div class="pub-body">
+                        <div class="pub-title">Guide to the design of broadband full polarization imager based on dispersion-compensation Savart plates</div>
+                        <div class="pub-authors">Zhang N, Zhao M, Zhang Y, et al.</div>
+                        <div class="pub-venue">Applied optics, 2023(19):62</div>
+                        <div class="pub-badge">Second Author</div>
+                        <div class="pub-badge">SCI Journal Paper</div>
+                        <p class="section-details">This paper provides a comprehensive guide for designing broadband full polarization imagers using dispersion-compensation Savart plates, with focus on optical system optimization and performance enhancement.</p>
+                        <a class="pub-link" href="https://doi.org/10.1364/ao.488427" target="_blank" rel="noopener">View Paper</a>
+                    </div>
+                </div>
             </div>
             
             <div class="publication-item">
-                <div class="pub-title">CSTGAN: Cycle Swin Transformer GAN for Unpaired Infrared Image Colorization</div>
-                <div class="pub-authors">Zhao M, Feng G, Tan J, et al.</div>
-                <div class="pub-venue">2022 3rd International Conference on Control, Robotics and Intelligent System (CCRIS), 2022</div>
-                <div class="pub-badge">First Author</div>
-                <div class="pub-badge">EI Conference Paper</div>
-                <p class="section-details">This paper presents a novel GAN-based approach for colorizing unpaired infrared images, addressing common artifacts and distortion issues through a cycle-consistent Swin Transformer architecture.</p>
-                <a class="pub-link" href="https://doi.org/10.1145/3562007.3562053" target="_blank" rel="noopener">View Paper</a>
+                <div class="pub-row">
+                    <img class="pub-thumb" src="paper picture/pub_cstgan.png" alt="CSTGAN figure">
+                    <div class="pub-body">
+                        <div class="pub-title">CSTGAN: Cycle Swin Transformer GAN for Unpaired Infrared Image Colorization</div>
+                        <div class="pub-authors">Zhao M, Feng G, Tan J, et al.</div>
+                        <div class="pub-venue">2022 3rd International Conference on Control, Robotics and Intelligent System (CCRIS), 2022</div>
+                        <div class="pub-badge">First Author</div>
+                        <div class="pub-badge">EI Conference Paper</div>
+                        <p class="section-details">This paper presents a novel GAN-based approach for colorizing unpaired infrared images, addressing common artifacts and distortion issues through a cycle-consistent Swin Transformer architecture.</p>
+                        <a class="pub-link" href="https://doi.org/10.1145/3562007.3562053" target="_blank" rel="noopener">View Paper</a>
+                    </div>
+                </div>
             </div>
             
             <div class="section-card">
@@ -882,6 +918,7 @@
                         </div>
                         <div class="section-details">
                             <p><strong>PhD Candidate in Electronic Science & Technology</strong></p>
+                            <p><strong>Advisor:</strong> Wendong Mao, Zhongfeng Wang</p>
                             <ul>
                                 <li>Doctoral First-Class Scholarship (2023-2024)</li>
                                 <li>Research focus: Hardware acceleration for neural networks, computer vision algorithms</li>
