@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赵明帆 - 个人简历</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e293b;
+            --accent-color: #3b82f6;
+            --light-color: #f8fafc;
+            --gray-color: #e2e8f0;
+            --dark-gray: #64748b;
+            --border-radius: 10px;
+            --box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans SC', 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--secondary-color);
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* 简历头部 */
+        .resume-header {
+            background: linear-gradient(135deg, var(--primary-color), #1e40af);
+            color: white;
+            border-radius: var(--border-radius);
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: var(--box-shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .resume-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transform: translate(30%, -30%);
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .name-title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .name {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+        
+        .title {
+            font-size: 1.2rem;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* 简历主体 */
+        .resume-body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        /* 卡片样式 */
+        .section-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+        
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--gray-color);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .section-title i {
+            color: var(--accent-color);
+            font-size: 1.3rem;
+        }
+        
+        /* 教育经历 */
+        .education-item, .work-item, .research-item {
+            margin-bottom: 25px;
+        }
+        
+        .education-item:last-child, .work-item:last-child, .research-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .institution {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--secondary-color);
+        }
+        
+        .degree {
+            font-weight: 500;
+            color: var(--dark-gray);
+            margin-bottom: 5px;
+        }
+        
+        .date-location {
+            display: flex;
+            justify-content: space-between;
+            color: var(--dark-gray);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .details {
+            margin-top: 10px;
+        }
+        
+        /* 技能部分 */
+        .skills-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .skill-category {
+            margin-bottom: 5px;
+        }
+        
+        .skill-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .skill-tag {
+            background-color: var(--light-color);
+            color: var(--primary-color);
+            padding: 6px 15px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid var(--gray-color);
+            transition: var(--transition);
+        }
+        
+        .skill-tag:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* 研究项目 */
+        .project-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--secondary-color);
+        }
+        
+        .project-role {
+            font-style: italic;
+            color: var(--dark-gray);
+            margin-bottom: 8px;
+        }
+        
+        /* 列表样式 */
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            padding-left: 22px;
+            position: relative;
+        }
+        
+        li:before {
+            content: "›";
+            color: var(--primary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+        
+        /* 出版物 */
+        .publication-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--gray-color);
+        }
+        
+        .publication-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .publication-authors {
+            color: var(--dark-gray);
+            font-size: 0.95rem;
+            margin-bottom: 5px;
+        }
+        
+        .publication-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--secondary-color);
+        }
+        
+        .publication-venue {
+            color: var(--dark-gray);
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+        
+        .publication-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: var(--transition);
+        }
+        
+        .publication-link:hover {
+            color: #1e40af;
+            text-decoration: underline;
+        }
+        
+        /* 奖项 */
+        .award-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--gray-color);
+        }
+        
+        .award-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 900px) {
+            .resume-body {
+                grid-template-columns: 1fr;
+            }
+            
+            .name {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .resume-header {
+                padding: 30px 20px;
+            }
+            
+            .name {
+                font-size: 1.9rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .section-card {
+                padding: 25px 20px;
+            }
+        }
+        
+        /* 页脚 */
+        .resume-footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--dark-gray);
+            font-size: 0.9rem;
+        }
+        
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 10px;
+            transition: var(--transition);
+        }
+        
+        .github-link:hover {
+            background-color: #0f172a;
+            transform: translateY(-3px);
+        }
+        
+        /* 打印样式 */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .resume-header {
+                box-shadow: none;
+            }
+            
+            .section-card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+            
+            .github-link {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 简历头部 -->
+        <header class="resume-header">
+            <div class="header-content">
+                <div class="name-title">
+                    <h1 class="name">赵明帆</h1>
+                    <p class="title">电子与信息工程硕士 | 计算机视觉研究员 | 软件工程师</p>
+                </div>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>中国科学院大学</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>中国 · 西安</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>zhaomingfan@example.com</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <!-- 简历主体 -->
+        <div class="resume-body">
+            <!-- 左列 -->
+            <div class="left-column">
+                <!-- 教育背景 -->
+                <section class="section-card">
+                    <h2 class="section-title"><i class="fas fa-university"></i> 教育背景</h2>
+                    
+                    <div class="education-item">
+                        <h3 class="institution">中国科学院大学</h3>
+                        <p class="degree">电子与信息工程硕士 | GPA: 3.56/4.00</p>
+                        <div class="date-location">
+                            <span><i class="far fa-calendar"></i> 2020 - 2023</span>
+                            <span><i class="fas fa-map-marker-alt"></i> 西安光学精密机械研究所</span>
+                        </div>
+                        <div class="details">
+                            <p>相关课程：遥感图像处理与分析、模式识别与机器学习、计算机视觉、深度学习、图像分析及其应用研讨会等</p>
+                        </div>
+                    </div>
+                    
+                    <div class="education-item">
+                        <h3 class="institution">西北大学</h3>
+                        <p class="degree">光电信息科学与工程学士 | GPA: 2.68/4.00</p>
+                        <div class="date-location">
+                            <span><i class="far fa-calendar"></i> 2014年8月 - 2018年6月</span>
+                            <span><i class="fas fa-map-marker-alt"></i> 中国西安</span>
+                        </div>
+                        <div class="details">
+                            <p>相关课程：计算机语言与编程(C++)、微积分、线性代数、数学物理方法、计算机网络原理、量子力学、计算物理等</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- 编程技能 -->
+                <section class="section-card">
+                    <h2 class="section-title"><i class="fas fa-code"></i> 编程技能</h2>
+                    
+                    <div class="skills-container">
+                        <div class="skill-category">
+                            <h3>编程语言</h3>
+                            <div class="skill-items">
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">C++</span>
+                                <span class="skill-tag">Matlab</span>
+                                <span class="skill-tag">SQL</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h3>开发工具</h3>
+                            <div class="skill-items">
+                                <span class="skill-tag">Visual Studio</span>
+                                <span class="skill-tag">QT</span>
+                                <span class="skill-tag">PyCharm</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- 奖项 -->
+                <section class="section-card">
+                    <h2 class="section-title"><i class="fas fa-award"></i> 获奖情况</h2>
+                    
+                    <div class="award-item">
+                        <span>中国科学院大学优秀学生</span>
+                        <span class="date">2020-2021</span>
+                    </div>
+                    
+                    <div class="award-item">
+                        <span>中国科学院大学优秀学生</span>
+                        <span class="date">2021-2022</span>
+                    </div>
+                </section>
+            </div>
+            
+            <!-- 右列 -->
+            <div class="right-column">
+                <!-- 研究经历 -->
+                <section class="section-card">
+                    <h2 class="section-title"><i class="fas fa-flask"></i> 研究经历</h2>
+                    
+                    <div class="research-item">
+                        <h3 class="project-title">CSTGAN: 基于循环Swin Transformer GAN的非配对红外图像着色</h3>
+                        <p class="project-role">作者 | 2021年9月 - 至今</p>
+                        <div class="details">
+                            <p>热红外图像着色是促进热红外图像理解的重要且有效的方法。实现这一目标的主要方法是基于生成对抗网络将热红外图像转换为可见光图像。基于循环一致生成对抗网络，该方法使用Transformer和卷积层重新设计生成器，并修改判别器和损失函数。该方法结合了卷积和Transformer的优点，以获得红外图像域和可见光图像域之间的准确映射。结果表明，该方法在公共数据集上得到验证，在FID和KID指标上优于先前的方法。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="research-item">
+                        <h3 class="project-title">HFGAN: 基于分层特征的偏振图像条纹去除GAN</h3>
+                        <p class="project-role">作者 | 2021年10月 - 至今</p>
+                        <div class="details">
+                            <p>偏振相机拍摄的偏振图像具有条纹，这阻碍了偏振图像在目标检测和图像分类等高级算法中的有效应用。去除偏振图像的条纹以获得清晰图像一直是一个未解决的问题。基于生成对抗网络，该方法使用不同层次的特征重新设计生成器和损失函数。该方法在数据集上训练，然后在真实拍摄的偏振图像上进行测试，在视觉上以及SSIM和PSNR指标上均优于现有方法。</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- 工作经历 -->
+                <section class="section-card">
+                    <h2 class="section-title"><i class="fas fa-briefcase"></i> 工作经历</h2>
+                    
+                    <div class="work-item">
+                        <h3 class="institution">西南计算机有限公司</h3>
+                        <p class="degree">软件助理工程师</p>
+                        <div class="date-location">
+                            <span><i class="far fa-calendar"></i> 2018年7月 - 2020年3月</span>
+                            <span><i class="fas fa-map-marker-alt"></i> 中国重庆</span>
+                        </div>
+                        <div class="details">
+                            <p>C++软件开发：在工作中，我从事Windows环境和Linux环境下的大型应用软件开发。熟练掌握C++和SQL语言。</p>
+                            <p>成果：作为开发项目的核心人员，我设计并构建了软件架构，并在离职前成功完成了项目的初步交付。</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- 出版物 -->
+                <section class="section-card">
+                    <h2 class="section-title"><i class="fas fa-file-alt"></i> 出版物</h2>
+                    
+                    <div class="publication-item">
+                        <div class="publication-authors">Z. Mingfan, F. Guirong, T. Jiahai, Z. Ning, and L. Xiaoqiang</div>
+                        <div class="publication-title">"CSTGAN: Cycle Swin Transformer GAN for Unpaired Infrared Image Colorization"</div>
+                        <div class="publication-venue">Proceedings of the 2022 3rd International Conference on Control, Robotics and Intelligent System (CCRIS), 2022, pp. 241-247.</div>
+                        <a href="https://doi.org/10.1145/3562007.3562053" target="_blank" class="publication-link">
+                            <i class="fas fa-external-link-alt"></i> 查看出版物
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </div>
+        
+        <!-- 页脚 -->
+        <footer class="resume-footer">
+            <p>© 2023 赵明帆 - 个人简历</p>
+            <p>最后更新: 2023年10月</p>
+            <a href="https://github.com/yourusername" target="_blank" class="github-link">
+                <i class="fab fa-github"></i> GitHub 仓库
+            </a>
+        </footer>
+    </div>
+
+    <script>
+        // 添加简单的交互效果
+        document.addEventListener('DOMContentLoaded', function() {
+            // 为技能标签添加点击效果
+            const skillTags = document.querySelectorAll('.skill-tag');
+            skillTags.forEach(tag => {
+                tag.addEventListener('click', function() {
+                    this.style.transform = 'translateY(-2px)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 200);
+                });
+            });
+            
+            // 更新年份
+            const yearSpan = document.querySelector('.resume-footer p:first-child');
+            const currentYear = new Date().getFullYear();
+            yearSpan.textContent = `© ${currentYear} 赵明帆 - 个人简历`;
+            
+            // 添加打印功能提示
+            console.log('提示：按 Ctrl+P 可以打印此简历');
+            
+            // 添加加载动画
+            const cards = document.querySelectorAll('.section-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100 + index * 100);
+            });
+        });
+    </script>
+</body>
+</html>
