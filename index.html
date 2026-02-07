@@ -34,9 +34,10 @@
         }
         
         .container {
-            max-width: 1400px;
+            max-width: 100%;
+            width: 90%;
             margin: 0 auto;
-            padding: 20px 24px;
+            padding: 20px;
         }
         
         /* Header Styling */
@@ -258,9 +259,9 @@
         }
         
         .section-title {
+            color: var(--secondary-color);
             font-weight: 600;
             font-size: 1.3rem;
-            color: var(--primary-color);
         }
         
         .section-date {
@@ -272,21 +273,23 @@
             color: var(--dark-color);
         }
         
+        .section-details p {
+            color: var(--dark-color);
+        }
+        
         .section-details ul {
             padding-left: 20px;
             margin-top: 10px;
         }
         
-        .section-details li {
+        .section-details ul li {
+            color: var(--gray-color);
             margin-bottom: 8px;
         }
         
         .highlight {
-            background-color: #cffafe;
-            padding: 3px 8px;
-            border-radius: 4px;
-            font-weight: 500;
-            color: #0369a1;
+            color: var(--accent-color);
+            font-weight: bold;
         }
         
         /* Publications Styling */
@@ -683,67 +686,75 @@
             
             <div class="section-card">
                 <div class="section-header">
-                    <div class="section-title">Research Focus</div>
+                    <div class="section-title">
+                        <i class="fas fa-user-graduate" style="color: var(--primary-color); margin-right: 10px;"></i> Personal Introduction
+                    </div>
                 </div>
-                <div class="section-details">
-                    <p>I began my PhD at Sun Yat-sen University in 2023. My research interests are deep learning, AI hardware acceleration, and robotics.</p>
+                <div class="section-details" style="font-family: 'Poppins', sans-serif; font-size: 1.2rem; line-height: 1.8; color: var(--dark-color);">
+                    <p>Hello, I'm <strong><em>Zhao Mingfan</em></strong>, a <strong><em>Ph.D. candidate</em></strong> at <strong>Sun Yat-sen University</strong>, advised by <strong>Dr. Wen-Dong Mao</strong> and <strong>Prof. Zhongfeng Wang (IEEE Fellow)</strong>. I received my <strong>M.S.</strong> from <strong>Xi'an Institute of Optics and Precision Mechanics, CAS</strong> in 2023 under <strong>Prof. Xiaoqiang Lu</strong>, and my <strong>B.S.</strong> from <strong>Northwest University (China)</strong> in 2018. My research interests include <strong><em>Deep Learning</em></strong>, <strong><em>AI Hardware Acceleration</em></strong>, and <strong><em>Robotics</em></strong>.</p>
                 </div>
             </div>
             
-            <h3>Research Experience</h3>
+            <h3>
+                <i class="fas fa-flask" style="color: var(--secondary-color); margin-right: 10px;"></i> Research Experience
+            </h3>
             
             <div class="section-card">
                 <div class="section-header">
-                    <div class="section-title">Transformer Hardware Acceleration for AI</div>
+                    <div class="section-title">
+                        <i class="fas fa-robot" style="color: var(--primary-color); margin-right: 10px;"></i> Robot Path Planning
+                    </div>
+                    <div class="section-date">Ongoing</div>
+                </div>
+                <div class="section-details">
+                    <p>Exploring innovative algorithms and techniques for efficient and reliable robot path planning in dynamic environments.</p>
+                    <ul>
+                        <li><span class="highlight">My Role:</span> Algorithm design and implementation</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section-card">
+                <div class="section-header">
+                    <div class="section-title">
+                        <i class="fas fa-microchip" style="color: var(--secondary-color); margin-right: 10px;"></i> Transformer Hardware Acceleration for AI
+                    </div>
                     <div class="section-date">Ongoing</div>
                 </div>
                 <div class="section-details">
                     <p>Hardware acceleration for neural network models with focus on optimizing power efficiency.</p>
                     <ul>
                         <li><span class="highlight">My Role:</span> Algorithm optimization and hardware design</li>
-                        <li><span class="highlight">Expected Outcome:</span> Superior power-performance ratio</li>
                     </ul>
                 </div>
             </div>
             
             <div class="section-card">
                 <div class="section-header">
-                    <div class="section-title">Saliency Map-Guided DenseUnetGAN for Paired Infrared Image Colorization</div>
+                    <div class="section-title">
+                        <i class="fas fa-brain" style="color: var(--accent-color); margin-right: 10px;"></i> Cycle and Saliency Map-Guided GANs for Infrared Image Colorization
+                    </div>
                     <div class="section-date">Completed</div>
                 </div>
                 <div class="section-details">
-                    <p>Proposed a novel method for paired infrared image colorization using saliency map guidance to improve performance.</p>
+                    <p>Developed GAN-based methods for both paired and unpaired infrared image colorization, addressing artifacts and improving colorization quality using saliency maps and cycle consistency.</p>
                     <ul>
-                        <li><span class="highlight">My Role:</span> Redesigned network architecture based on SCGAN</li>
-                        <li><span class="highlight">Results:</span> State-of-the-art performance on KAIST dataset</li>
+                        <li><span class="highlight">My Role:</span> Redesigned network architectures and optimized training strategies</li>
                     </ul>
                 </div>
             </div>
             
             <div class="section-card">
                 <div class="section-header">
-                    <div class="section-title">Cycle SwinTransformer GAN for Unpaired Infrared Image Colorization</div>
+                    <div class="section-title">
+                        <i class="fas fa-cogs" style="color: var(--primary-color); margin-right: 10px;"></i> Deep Learning-based Polarization Image Demodulation
+                    </div>
                     <div class="section-date">Completed</div>
                 </div>
                 <div class="section-details">
-                    <p>Addressed artifacts and distortion issues in unpaired infrared image colorization using a novel GAN-based approach.</p>
-                    <ul>
-                        <li><span class="highlight">My Role:</span> Redesigned network architecture based on unsupervised GAN</li>
-                        <li><span class="highlight">Results:</span> Outperformed existing methods on multiple datasets</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="section-card">
-                <div class="section-header">
-                    <div class="section-title">Hierarchical Feature-based Conditional GAN for Stripe Noise Removal in Polarization Images</div>
-                    <div class="section-date">Completed</div>
-                </div>
-                <div class="section-details">
-                    <p>Developed a method to remove stripe noise from polarization images while minimizing information loss.</p>
+                    <p>Proposed a deep learning approach for demodulating polarization images, effectively removing stripe noise while preserving critical information.</p>
                     <ul>
                         <li><span class="highlight">My Role:</span> Redesigned generator and loss functions to utilize hierarchical features</li>
-                        <li><span class="highlight">Results:</span> Superior visual quality and higher SSIM/PSNR metrics</li>
                     </ul>
                 </div>
             </div>
@@ -751,7 +762,7 @@
             <h3>Technical Skills</h3>
             <div class="skills-container">
                 <div class="skill-category">
-                    <h4>Programming</h4>
+                    <h4>Core Skills</h4>
                     <div class="skill-item">
                         <span class="skill-name">C++</span>
                         <div class="skill-bar">
@@ -765,65 +776,15 @@
                         </div>
                     </div>
                     <div class="skill-item">
-                        <span class="skill-name">MATLAB</span>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 85%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">Databases</span>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 75%"></div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h4>AI & Hardware</h4>
-                    <div class="skill-item">
-                        <span class="skill-name">PyTorch Framework</span>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 90%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">Deep Learning Models</span>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 88%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
                         <span class="skill-name">Verilog</span>
                         <div class="skill-bar">
                             <div class="skill-level" style="width: 80%"></div>
                         </div>
                     </div>
                     <div class="skill-item">
-                        <span class="skill-name">Hardware Design</span>
+                        <span class="skill-name">MATLAB</span>
                         <div class="skill-bar">
                             <div class="skill-level" style="width: 85%"></div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h4>Robotics</h4>
-                    <div class="skill-item">
-                        <span class="skill-name">ROS (Robot Operating System)</span>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 80%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">Computer Vision</span>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 85%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">Motion Planning</span>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 75%"></div>
                         </div>
                     </div>
                 </div>
@@ -897,7 +858,7 @@
             
             <div class="section-card">
                 <h3>Research in Progress</h3>
-                <p>Currently working on additional papers in the areas of transformer hardware acceleration and computer vision applications.</p>
+                <p>Currently working on additional papers in the areas of transformer hardware acceleration and robotics.</p>
             </div>
         </section>
         
@@ -940,6 +901,7 @@
                         <div class="section-details">
                             <p><strong>Master of Engineering in Electronic Information</strong></p>
                             <p><em>Cultivation Unit: Xi'an Institute of Optics and Precision Mechanics, CAS</em></p>
+                            <p><strong>Advisor:</strong> Xiaoqiang Lu</p>
                             <ul>
                                 <li>Outstanding Student Award (2020-2021)</li>
                                 <li>Outstanding Student Award (2021-2022)</li>
@@ -1064,22 +1026,18 @@
             <h2>Additional Notes</h2>
             
             <div class="notes-content">
-                <div class="note-item">
-                    <h3>Self-Evaluation</h3>
-                    <p>Proficient in Python, C++, Verilog, MATLAB, and development tools like Qt and VS. Capable of reproducing computer vision paper codes using PyTorch framework and designing hardware accelerators.</p>
-                    <p>Diligent in academic pursuits with consistent scholarship awards. Maintain a positive attitude towards life and work, with passion for coding and research.</p>
-                </div>
-                
-                <div class="note-item">
-                    <h3>Future Goals</h3>
-                    <p>Complete PhD dissertation on efficient hardware acceleration for vision transformers. Pursue postdoctoral research or industry R&D position focusing on AI hardware co-design. Contribute to open-source projects in computer vision and hardware acceleration.</p>
+                <div class="note-item" style="font-family: 'Poppins', sans-serif; font-size: 1.2rem; line-height: 1.8; color: var(--dark-color);">
+                    <h3 style="color: var(--primary-color);">About Me</h3>
+                    <p style="color: #0ea5e9; font-weight: bold; font-style: italic;">
+                        I am an optimistic and positive person, always open to communication and collaboration. Throughout my journey, I feel incredibly <span style="color: #06b6d4; font-weight: bold;">lucky</span> to have received support and help from so many people. I aspire to continue pursuing <span style="color: #22c55e; font-weight: bold;">scientific research</span> and hope to make meaningful contributions in the future!
+                    </p>
                 </div>
             </div>
         </section>
         
         <footer>
-            <p>© 2023 Zhao Mingfan | PhD Candidate in Electronic Science & Technology</p>
-            <p>This resume website is built with HTML, CSS, and JavaScript. All information is current as of October 2023.</p>
+            <p>© Zhao Mingfan | PhD Candidate in Electronic Science & Technology</p>
+            <p>This resume website is built with HTML, CSS, and JavaScript.</p>
             <a href="https://github.com" class="github-link" target="_blank">
                 <i class="fab fa-github"></i> View on GitHub
             </a>
